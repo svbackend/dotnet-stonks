@@ -1,0 +1,21 @@
+﻿@page "/genres"
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+<h3>Genres</h3>
+<p>
+    Counter: @Storage.Counter
+</p>
+
+@code {
+
+    protected override void OnInitialized()
+    {
+        localStorage.SetItemAsync("actor", new Person
+        {
+            Name = "Jan Kowalski",
+            Biography = "Lorem ipsum..."
+        });
+        base.OnInitialized();
+    }
+
+}

@@ -1,0 +1,47 @@
+﻿@page "/movies"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@inject IMoviesRepository moviesRepository
+@attribute [Authorize]
+@inject HttpClient httpClient
+
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+<h3>Movies</h3>
+<div>
+    <h3>In theaters</h3>
+    <NavLink class="nav-link" href="genres">
+        <span class="oi oi-plus" aria-hidden="true"></span> Genres
+    </NavLink>
+    <MoviesList Movies="MoviesList" />
+</div>
+
+@code {
+
+    private List<Movie> MoviesList;
+    protected async override Task OnInitializedAsync()
+    {
+        Storage.Counter++;
+        var st = await localStorage.GetItemAsync<Person>("actor");
+        await GetMovies();
+    }
+
+    private async Task GetMovies()
+    {
+        MoviesList = await moviesRepository.GetMovies();
+
+        //var responseHTTP = await httpClient.GetAsync("api/movies");
+
+        //if (responseHTTP.IsSuccessStatusCode)
+        //{
+        //    var responseString = await responseHTTP.Content.ReadAsStringAsync();
+        //    MoviesList = System.Text.Json.JsonSerializer.Deserialize<List<Movie>>(responseString, new System.Text.Json.JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        //}
+        //else
+        //{
+        //    //error
+        //}
+    }
+}
