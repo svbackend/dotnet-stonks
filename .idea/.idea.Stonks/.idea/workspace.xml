@@ -6,7 +6,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c34cfdb-39a7-4056-8f45-85ed10ca45d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/App.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Helpers/HttpResponseWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Helpers/HttpResponseWrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Helpers/HttpService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Helpers/HttpService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Helpers/IHttpService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Helpers/IHttpService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Helpers/IJSRuntimeExtensionMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Helpers/IJSRuntimeExtensionMethods.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/MovieApp.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Stonks.Client.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Pages/Authentication.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Pages/Authentication.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Pages/Counter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Pages/Counter.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Pages/FetchData.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Pages/Movies/EditMovie.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Pages/Movies/EditMovie.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Pages/Movies/MovieForm.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Pages/Movies/MovieForm.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Pages/Movies/Movies.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Pages/Movies/Movies.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Repository/IMovieRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Repository/IMovieRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Repository/MovieRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Repository/MovieRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/GenericList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/GenericList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/IndividualMovie.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/IndividualMovie.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/LoginDisplay.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/LoginDisplay.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/MainLayout.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/MoviesList.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/MoviesList.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/RedirectToLogin.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/RedirectToLogin.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/Shared/SurveyPrompt.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/SurveyPrompt.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/bootstrap/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/bootstrap/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/bootstrap/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/bootstrap/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/FONT-LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/FONT-LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/ICON-LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/ICON-LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/js/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/js/Counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Client/wwwroot/js/Utilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/wwwroot/js/Utilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Areas/Identity/Pages/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Areas/Identity/Pages/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Controllers/MoviesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Controllers/MoviesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Controllers/OidcConfigurationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Controllers/OidcConfigurationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Controllers/WeatherForecastController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Data/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Migrations/20210616115505_CreateIdentitySchema.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Migrations/20210616115505_CreateIdentitySchema.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Migrations/20210616115505_CreateIdentitySchema.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Migrations/20210616115505_CreateIdentitySchema.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/MovieApp.Server.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Stonks.Server.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Pages/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Properties/serviceDependencies.json" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Properties/serviceDependencies.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Properties/serviceDependencies.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Properties/serviceDependencies.local.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Services/MoviesDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/MoviesDbService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Server/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/DTOs/SampleDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/DTOs/SampleDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/Models/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/ApplicationUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/Models/Genre.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/Genre.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/Models/Movie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/Movie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/Models/MoviesActors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/MoviesActors.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/Models/MoviesGenres.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/MoviesGenres.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/Models/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/Person.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/MovieApp.Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Stonks.Shared.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MovieApp/Shared/WeatherForecast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/WeatherForecast.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +186,7 @@
       <workItem from="1623841057435" duration="42000" />
       <workItem from="1623841105056" duration="103000" />
       <workItem from="1623841211173" duration="981000" />
+      <workItem from="1623864692256" duration="342000" />
     </task>
     <servers />
   </component>
