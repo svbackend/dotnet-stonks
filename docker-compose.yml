@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  stonks-db:
+    image: postgres:13-alpine
+    env_file:
+      - .env.local
+    volumes:
+      - stonks-db:/var/lib/postgresql/data
+    ports:
+      - "15432:5432"
+
+volumes:
+  stonks-db:

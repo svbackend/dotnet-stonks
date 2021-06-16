@@ -1,0 +1,8 @@
+﻿PUT https://localhost:5001/api/movies/1
+Content-Type: application/json
+
+{
+  "Poster": "Test Post Endpoint (Updated2)"
+}
+
+###
