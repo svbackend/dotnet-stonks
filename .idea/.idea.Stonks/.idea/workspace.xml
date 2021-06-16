@@ -6,16 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c34cfdb-39a7-4056-8f45-85ed10ca45d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieApp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieApp/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieApp/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieApp/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MovieApp/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Client/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Client/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Properties/launchSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +16,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Stonks/Client/obj/Debug/net5.0/Razor/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/714572DA-9830-48B1-BF3A-8C1360A6A2C4/15/LayoutComponentBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Stonks/Server/Services/MoviesDbService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -126,7 +124,7 @@
       <workItem from="1623841057435" duration="42000" />
       <workItem from="1623841105056" duration="103000" />
       <workItem from="1623841211173" duration="981000" />
-      <workItem from="1623864692256" duration="1549000" />
+      <workItem from="1623864692256" duration="2398000" />
     </task>
     <servers />
   </component>
