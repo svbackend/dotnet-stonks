@@ -6,6 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c34cfdb-39a7-4056-8f45-85ed10ca45d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +27,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Stonks/Server/Services/MoviesDbService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/714572DA-9830-48B1-BF3A-8C1360A6A2C4/15/LayoutComponentBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Stonks/Server/Services/MoviesDbService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -36,6 +38,10 @@
       <option value="$PROJECT_DIR$/Stonks/Client/Shared/MainLayout.razor" />
       <option value="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" />
       <option value="$PROJECT_DIR$/Stonks/Server/Properties/launchSettings.json" />
+      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Ticker.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1u1lcXm63AgTNE3bUTRADfp6VPC" />
@@ -125,11 +131,25 @@
       <workItem from="1623841105056" duration="103000" />
       <workItem from="1623841211173" duration="981000" />
       <workItem from="1623864692256" duration="2398000" />
+      <workItem from="1623867276894" duration="1134000" />
+      <workItem from="1623944330888" duration="6782000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
