@@ -19,18 +19,18 @@ namespace Stonks.Server.Controllers
     public class StocksController : ControllerBase
     {
         private readonly ILogger<MoviesController> _logger;
-        private readonly IMoviesDbService _dbService;
+        private readonly TickerDataProvider _tickerDataProvider;
 
-        public StocksController(ILogger<MoviesController> logger, IMoviesDbService dbService)
+        public StocksController(ILogger<MoviesController> logger, TickerDataProvider tickerDataProvider)
         {
             _logger = logger;
-            _dbService = dbService;
+            _tickerDataProvider = tickerDataProvider;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetStocks([FromQuery] string query)
         {
-            // var stocks = _stocks.findByTickerOrCompany(query);
+            var stocks = _tickerDataProvider.FindStocksByTickerOrCompany(query);
             
             /* inside:
              * 

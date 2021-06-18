@@ -1,14 +1,45 @@
+using System.Collections.Generic;
+using Stonks.Shared.Models;
+
 namespace Stonks.Server.Services
 {
+    public class PolygonTickersResponse
+    {
+        public int Count { get; set; }
+        public string NextUrl { get; set; }
+        public List<PolygonStockPreview> Results { get; set; }
+    }
+
+    public class PolygonStockPreview
+    {
+        public bool Active { get; set; }
+        public string CurrencyName { get; set; }
+        public string LastUpdatedUtc { get; set; }
+        public string Market { get; set; }
+        public string Name { get; set; }
+        public string PrimaryExchange { get; set; }
+        public string Ticker { get; set; }
+        public string Type { get; set; }
+    }
+
     public class TickerDataProvider
     {
-        public void FindStocksByTickerOrCompany(string query)
+        private readonly IHttpService _httpService;
+
+        TickerDataProvider(IHttpService httpService)
         {
-            
+            _httpService = httpService;
+        }
+
+        public IEnumerable<Stock> FindStocksByTickerOrCompany(string query)
+        {
+            _httpService.Get<PolygonTickersResponse>($"");
+
+            return new List<Stock>();
         }
 
         // Search by ticker or company name - https://api.polygon.io/v3/reference/tickers?search=Apple&active=true&sort=ticker&order=asc&limit=10
-        
+
         // {
         //     "ticker":"AAPL",
         //     "name":"Apple Inc.",
@@ -23,9 +54,9 @@ namespace Stonks.Server.Services
         //     "share_class_figi":"BBG001S5N8V8",
         //     "last_updated_utc":"2021-06-16T00:00:00Z"
         // }
-        
+
         // load more details about stock and company itself - https://api.polygon.io/v1/meta/symbols/TSLA/company
-        
+
         // {
         //     "logo": "https://s3.polygon.io/logos/aapl/logo.png",
         //     "listdate": "1990-01-02T00:00:00.000Z",
@@ -70,7 +101,7 @@ namespace Stonks.Server.Services
         // }
 
         // OHLC by ticker & range - https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2020-06-01/2020-06-17
-        
+
         // In order to provide as smooth UX as possible I think I need to do this:
         // When user searches for a company backend need to load list of results from polygon and
         // return it to frontend ASAP but it lacks some info (tags, category) in background (asynchronously) we need to load more details about all returned companies,
