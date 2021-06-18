@@ -6,8 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c34cfdb-39a7-4056-8f45-85ed10ca45d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Stonks/Server/Services/HttpResponseWrapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stonks/Server/Services/HttpService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stonks/Server/Services/IHttpService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +41,14 @@
       <option value="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" />
       <option value="$PROJECT_DIR$/Stonks/Server/Properties/launchSettings.json" />
       <option value="$PROJECT_DIR$/Stonks/Shared/Models/Ticker.cs" />
-      <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
       <option value="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" />
       <option value="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Data/ApplicationDbContext.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/HttpService.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/IHttpService.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/HttpResponseWrapper.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1u1lcXm63AgTNE3bUTRADfp6VPC" />
@@ -134,7 +140,8 @@
       <workItem from="1623864692256" duration="2398000" />
       <workItem from="1623867276894" duration="1134000" />
       <workItem from="1623944330888" duration="7448000" />
-      <workItem from="1623977539931" duration="5087000" />
+      <workItem from="1623977539931" duration="5205000" />
+      <workItem from="1624017223921" duration="1172000" />
     </task>
     <servers />
   </component>

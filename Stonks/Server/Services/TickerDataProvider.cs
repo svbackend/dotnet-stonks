@@ -2,6 +2,11 @@ namespace Stonks.Server.Services
 {
     public class TickerDataProvider
     {
+        public void FindStocksByTickerOrCompany(string query)
+        {
+            
+        }
+
         // Search by ticker or company name - https://api.polygon.io/v3/reference/tickers?search=Apple&active=true&sort=ticker&order=asc&limit=10
         
         // {
