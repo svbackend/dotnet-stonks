@@ -6,3 +6,5 @@ Content-Type: application/json
 }
 
 ###
+
+GET https://localhost:5001/api/stocks

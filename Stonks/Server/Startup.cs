@@ -33,6 +33,8 @@ namespace Stonks.Server
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<IMoviesDbService, MoviesDbService>();
+            services.AddScoped<IHttpService, HttpService>();
+            services.AddScoped<TickerDataProvider>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 

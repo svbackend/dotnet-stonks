@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Stonks.Shared.Models;
 
 namespace Stonks.Server.Services
@@ -26,16 +27,16 @@ namespace Stonks.Server.Services
     {
         private readonly IHttpService _httpService;
 
-        TickerDataProvider(IHttpService httpService)
+        public TickerDataProvider(IHttpService httpService)
         {
             _httpService = httpService;
         }
 
-        public IEnumerable<Stock> FindStocksByTickerOrCompany(string query)
+        public async Task<IEnumerable<PolygonStockPreview>> FindStocksByTickerOrCompany(string query)
         {
-            _httpService.Get<PolygonTickersResponse>($"");
+            var response = await _httpService.Get<PolygonTickersResponse>($"https://api.polygon.io/v3/reference/tickers?search=A&active=true&sort=ticker&order=asc&limit=10");
 
-            return new List<Stock>();
+            return response.Response.Results;
         }
 
         // Search by ticker or company name - https://api.polygon.io/v3/reference/tickers?search=Apple&active=true&sort=ticker&order=asc&limit=10

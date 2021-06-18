@@ -1,0 +1,102 @@
+[
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "Anfield Universal Fixed Income ETF",
+    "primaryExchange": null,
+    "ticker": "AFIF",
+    "type": "ETF"
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "Absolute Software Corporation Common Stock",
+    "primaryExchange": null,
+    "ticker": "ABST",
+    "type": "CS"
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "iShares Core Moderate Allocation ETF",
+    "primaryExchange": null,
+    "ticker": "AOM",
+    "type": "ETF"
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "Arch Capital Group Ltd. Depositary Shares, each Representing a 1/1,000th Interest in a 4.550% Non-Cu",
+    "primaryExchange": null,
+    "ticker": "ACGLN",
+    "type": null
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "Andersons Inc/The",
+    "primaryExchange": null,
+    "ticker": "ANDE",
+    "type": "CS"
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "Assured Guaranty Municipal Holdings Inc. 6.25% Notes due 2102",
+    "primaryExchange": null,
+    "ticker": "AGOpE",
+    "type": "PFD"
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "American Homes 4 Rent 6.35% Series E Cumulative Redeemable Perpetual Preferred Shares of Beneficial",
+    "primaryExchange": null,
+    "ticker": "AMHpE",
+    "type": "PFD"
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "ARK Next Generation Internet ETF",
+    "primaryExchange": null,
+    "ticker": "ARKW",
+    "type": "ETF"
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "AquaBounty Technologies, Inc.",
+    "primaryExchange": null,
+    "ticker": "AQB",
+    "type": "CS"
+  },
+  {
+    "active": true,
+    "currencyName": null,
+    "lastUpdatedUtc": null,
+    "market": "stocks",
+    "name": "Asbury Automotive Group, Inc.",
+    "primaryExchange": null,
+    "ticker": "ABG",
+    "type": "CS"
+  }
+]

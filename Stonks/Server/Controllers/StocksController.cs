@@ -1,36 +1,26 @@
-﻿using System;
-using System.IO;
-using System.Text;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Stonks.Server.Services;
-using System.Threading.Tasks;
-using Stonks.Shared.DTOs;
-using Stonks.Shared.Models;
-using Newtonsoft.Json.Linq;
-
 
 namespace Stonks.Server.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("api/stocks")]
     public class StocksController : ControllerBase
     {
-        private readonly ILogger<MoviesController> _logger;
         private readonly TickerDataProvider _tickerDataProvider;
 
-        public StocksController(ILogger<MoviesController> logger, TickerDataProvider tickerDataProvider)
+        public StocksController(TickerDataProvider tickerDataProvider)
         {
-            _logger = logger;
             _tickerDataProvider = tickerDataProvider;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetStocks([FromQuery] string query)
         {
-            var stocks = _tickerDataProvider.FindStocksByTickerOrCompany(query);
+            var stocks = await _tickerDataProvider.FindStocksByTickerOrCompany(query);
             
             /* inside:
              * 
@@ -59,28 +49,7 @@ namespace Stonks.Server.Controllers
              */
             
             
-            return Ok(await _dbService.GetMovies());
-        }
-
-        [HttpGet("{idMovie}")]
-        public async Task<IActionResult> GetMovie(int idMovie)
-        {
-            return Ok(await _dbService.GetMovie(idMovie));
-        }
-
-        [HttpPut("{idMovie}")]
-        public async Task<IActionResult> UpdateMovie(int idMovie, Movie movie)
-        {
-            await _dbService.UpdateMovie(movie);
-            
-            return NoContent();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateMovie(Movie movie)
-        {
-            await _dbService.AddMovie(movie);
-            return Ok(await _dbService.GetMovies());
+            return Ok(stocks);
         }
     }
 }
