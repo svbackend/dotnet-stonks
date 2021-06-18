@@ -54,6 +54,9 @@ namespace Stonks.Server.Data
                    .WithMany(p => p.MoviesGenres)
                    .HasForeignKey(p => p.MovieId);
             });
+            
+            builder.Entity<Stock>()
+                .HasKey(model => new {model.IdCompany, model.Ticker});
 
             base.OnModelCreating(builder);
         }

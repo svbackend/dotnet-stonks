@@ -6,14 +6,12 @@ namespace Stonks.Shared.Models
 {
     public class Company
     {
-        [Key]
-        public int Id { get; set; }
-        
         [Required]
         public string Name { get; set; }
         
+        [Required]
+        public string Cik { get; set; }
 
-        
         // "ticker":"APLE",
         // "name":"Apple Hospitality REIT, Inc.",
         // "market":"stocks",

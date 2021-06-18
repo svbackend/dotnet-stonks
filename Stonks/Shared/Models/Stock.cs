@@ -1,29 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Stonks.Shared.Models
 {
-    public enum StockMarket
+    public enum Market
     {
         Stocks = 0,
-        Ctypto = 1,
+        Crypto = 1,
         Fx = 2
     }
 
     public class Stock
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
         
         [Required]
         public string Ticker { get; set; }
         
         [Required]
-        public StockMarket Market { get; set; }
+        public Market Market { get; set; }
         
         [Required]
+        [ForeignKey("IdCompany")]
         public Company Company { get; set; }
+        
+        public int IdCompany { get; set; }
         
         [Required]
         public string Currency { get; set; }
