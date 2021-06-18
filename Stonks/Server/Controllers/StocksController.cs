@@ -30,7 +30,7 @@ namespace Stonks.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> GetStocks([FromQuery] string query)
         {
-            // var stocks = DAL.stocks.findByTickerOrCompany(query);
+            // var stocks = _stocks.findByTickerOrCompany(query);
             
             /* inside:
              * 
@@ -41,6 +41,21 @@ namespace Stonks.Server.Controllers
              * }
              *
              * return stocks;
+             */
+            
+            /*
+             * <IEnumerable<StockDto>, IError> findByTickerOrCompany(string query) {
+             *    IEnumerable<StockDto> stocks;
+             *    try {
+             *      stocks = apiClient.search(query)
+             *    } catch (ApiLimitExceededException e) {
+             *       return (null, new Error(...));
+             *    }
+             *
+             *    todo cache results
+             * 
+             *    return stocks;
+             * }
              */
             
             
