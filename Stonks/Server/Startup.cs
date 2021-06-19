@@ -35,9 +35,9 @@ namespace Stonks.Server
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<PolygonHttpService>();
-
-            services.AddScoped<IMoviesDbService, MoviesDbService>();
+            
             services.AddScoped<IHttpService, HttpService>();
+            services.AddScoped<DbService>();
             services.AddScoped<TickerDataProvider>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();

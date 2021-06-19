@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+using Stonks.Server.Data;
 using Stonks.Shared.Models;
 
 namespace Stonks.Server.Services
@@ -26,23 +28,27 @@ namespace Stonks.Server.Services
     public class TickerDataProvider
     {
         private readonly PolygonHttpService _polygon;
+        private readonly DbService _db;
 
-        public TickerDataProvider(PolygonHttpService polygon)
+        public TickerDataProvider(PolygonHttpService polygon, DbService db)
         {
             _polygon = polygon;
+            _db = db;
         }
 
         public async Task<IEnumerable<PolygonStockPreview>> FindStocksByTickerOrCompany(string query)
         {
             var response = await _polygon.FindStocks(query);
 
-            if (!response.Success)
+            if (response.Success)
+            {
+                await _db.SyncStockPreviews(response.Response.Results);
+            }
+            else
             {
                 // todo try to find stocks in our db
             }
-            // 1. Add api.polygon.io as baseAddress of httpClient
-            // 2. Add ?apiKey=xxx to query or Authorization: Bearer XXX to headers
-            
+
             return response.Response.Results;
         }
 
