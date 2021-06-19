@@ -10,6 +10,65 @@ using Stonks.Server.Utils;
 
 namespace Stonks.Server.Services
 {
+    public class PolygonStockDetails
+    {
+        public Uri Logo { get; set; }
+
+        public DateTimeOffset Listdate { get; set; }
+
+        public string Cik { get; set; }
+
+        public string Bloomberg { get; set; }
+        
+        public object Figi { get; set; }
+
+        public string Lei { get; set; }
+        
+        public long Sic { get; set; }
+        
+        public string Country { get; set; }
+
+        public string Industry { get; set; }
+
+        public string Sector { get; set; }
+
+        public long Marketcap { get; set; }
+
+        public long Employees { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Ceo { get; set; }
+
+        public Uri Url { get; set; }
+
+        public string Description { get; set; }
+
+        public string Exchange { get; set; }
+
+        public string Name { get; set; }
+
+        public string Symbol { get; set; }
+
+        public string ExchangeSymbol { get; set; }
+
+        public string HqAddress { get; set; }
+
+        public string HqState { get; set; }
+        
+        public string HqCountry { get; set; }
+        
+        public string Type { get; set; }
+        
+        public string Updated { get; set; }
+        
+        public string[] Tags { get; set; }
+
+        public string[] Similar { get; set; }
+        
+        public bool Active { get; set; }
+    }
+    
     public class PolygonHttpService
     {
         private const string BaseUrl = "https://api.polygon.io";
@@ -35,6 +94,11 @@ namespace Stonks.Server.Services
         public async Task<HttpResponseWrapper<PolygonTickersResponse>> FindStocks(string query)
         {
             return await Get<PolygonTickersResponse>($"/v3/reference/tickers?search={query}&active=true&limit=10");
+        }
+
+        public async Task<HttpResponseWrapper<PolygonStockDetails>> FindStockByTicker(string ticker)
+        {
+            return await Get<PolygonStockDetails>($"/v1/meta/symbols/{ticker}/company");
         }
 
         private async Task<HttpResponseWrapper<T>> Get<T>(string url)

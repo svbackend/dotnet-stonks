@@ -46,6 +46,20 @@ namespace Stonks.Server.Services
             return response.Response.Results;
         }
 
+        public async Task<PolygonStockDetails> FindStockByTicker(string ticker)
+        {
+            var response = await _polygon.FindStockByTicker(ticker);
+
+            if (!response.Success)
+            {
+                // todo try to find stocks in our db
+            }
+            // 1. Add api.polygon.io as baseAddress of httpClient
+            // 2. Add ?apiKey=xxx to query or Authorization: Bearer XXX to headers
+            
+            return response.Response;
+        }
+
         // Search by ticker or company name - https://api.polygon.io/v3/reference/tickers?search=Apple&active=true&sort=ticker&order=asc&limit=10
 
         // {

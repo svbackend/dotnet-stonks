@@ -6,14 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c34cfdb-39a7-4056-8f45-85ed10ca45d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Stonks/Server/Utils/SnakeCaseNamingPolicy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,16 +49,16 @@
       <option value="$PROJECT_DIR$/Stonks/Server/Data/ApplicationDbContext.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/IHttpService.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/HttpResponseWrapper.cs" />
-      <option value="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/HttpService.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Utils/SnakeCaseNamingPolicy.cs" />
-      <option value="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" />
-      <option value="$PROJECT_DIR$/api.http" />
-      <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
       <option value="$PROJECT_DIR$/README.md" />
       <option value="$PROJECT_DIR$/Stonks/Server/Startup.cs" />
       <option value="$PROJECT_DIR$/Stonks/Shared/.gitignore" />
       <option value="$PROJECT_DIR$/.gitignore" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" />
+      <option value="$PROJECT_DIR$/api.http" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1u1lcXm63AgTNE3bUTRADfp6VPC" />
@@ -81,6 +78,9 @@
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Stonks.Server">
     <configuration name="api#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api.http" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="api#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api.http" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="Stonks.Client: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -145,6 +145,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.api#3" />
         <item itemvalue="HTTP Request.api#2" />
       </list>
     </recent_temporary>
@@ -166,7 +167,7 @@
       <workItem from="1623977539931" duration="5205000" />
       <workItem from="1624017223921" duration="1797000" />
       <workItem from="1624039156294" duration="7119000" />
-      <workItem from="1624077010465" duration="1543000" />
+      <workItem from="1624077010465" duration="2488000" />
     </task>
     <servers />
   </component>
@@ -193,13 +194,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs</url>
-          <line>36</line>
+          <line>95</line>
           <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" initialLine="36" containingFunctionPresentation="method 'FindStocks'">
             <startOffsets>
-              <option value="1231" />
+              <option value="2590" />
             </startOffsets>
             <endOffsets>
-              <option value="1334" />
+              <option value="2693" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
@@ -216,6 +217,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs</url>
+          <line>100</line>
+          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" initialLine="100" containingFunctionPresentation="method 'FindStockByTicker'">
+            <startOffsets>
+              <option value="2828" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2904" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs</url>
+          <line>52</line>
+          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" initialLine="52" containingFunctionPresentation="method 'FindStockByTicker'">
+            <startOffsets>
+              <option value="1631" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1653" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
