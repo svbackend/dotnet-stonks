@@ -20,6 +20,7 @@ namespace Stonks.Server.Services
         public string LastUpdatedUtc { get; set; }
         public string Market { get; set; }
         public string Name { get; set; }
+        public string Cik { get; set; }
         public string PrimaryExchange { get; set; }
         public string Ticker { get; set; }
         public string Type { get; set; }

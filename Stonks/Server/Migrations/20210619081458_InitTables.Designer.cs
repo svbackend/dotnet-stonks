@@ -6,17 +6,19 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Stonks.Server.Data;
+using Stonks.Shared.Models;
 
 namespace Stonks.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210619061806_AddStockAndCompanyTables")]
-    partial class AddStockAndCompanyTables
+    [Migration("20210619081458_InitTables")]
+    partial class InitTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasPostgresEnum(null, "market", new[] { "stocks", "crypto", "fx" })
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
@@ -345,7 +347,7 @@ namespace Stonks.Server.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
-                    b.Property<long>("Employees")
+                    b.Property<long?>("Employees")
                         .HasColumnType("bigint");
 
                     b.Property<string>("ExchangeSymbol")
@@ -369,13 +371,13 @@ namespace Stonks.Server.Migrations
                     b.Property<string>("Lei")
                         .HasColumnType("text");
 
-                    b.Property<DateTimeOffset>("Listdate")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime?>("Listdate")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Logo")
                         .HasColumnType("text");
 
-                    b.Property<long>("Marketcap")
+                    b.Property<long?>("Marketcap")
                         .HasColumnType("bigint");
 
                     b.Property<string>("Name")
@@ -388,7 +390,7 @@ namespace Stonks.Server.Migrations
                     b.Property<string>("Sector")
                         .HasColumnType("text");
 
-                    b.Property<long>("Sic")
+                    b.Property<long?>("Sic")
                         .HasColumnType("bigint");
 
                     b.Property<string[]>("Similar")
@@ -411,6 +413,9 @@ namespace Stonks.Server.Migrations
 
                     b.HasKey("IdCompany");
 
+                    b.HasIndex("Cik")
+                        .IsUnique();
+
                     b.ToTable("Companies");
                 });
 
@@ -427,13 +432,14 @@ namespace Stonks.Server.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("IdStock")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("text");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
-                    b.Property<int>("Market")
-                        .HasColumnType("integer");
+                    b.Property<Market>("Market")
+                        .HasColumnType("market");
 
                     b.Property<string>("PrimaryExchange")
                         .IsRequired()

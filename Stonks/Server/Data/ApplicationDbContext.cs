@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Npgsql;
 using Stonks.Shared.Models;
 
 namespace Stonks.Server.Data
@@ -16,11 +17,20 @@ namespace Stonks.Server.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+        
+        static ApplicationDbContext()
+            => NpgsqlConnection.GlobalTypeMapper.MapEnum<Market>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Stock>()
                 .HasKey(model => new {model.IdCompany, model.Ticker});
+            
+            builder.Entity<Company>()
+                .HasIndex(model => model.Cik)
+                .IsUnique();
+            
+            builder.HasPostgresEnum<Market>();
 
             base.OnModelCreating(builder);
         }
