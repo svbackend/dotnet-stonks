@@ -1,3 +1,197 @@
+GET https://localhost:5001/api/stocks?query=Tes
+
+<> 2021-06-19T175309.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tes
+
+<> 2021-06-19T175233.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tes
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tes
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tes
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tes
+
+<> 2021-06-19T173307.500.txt
+
+###
+
+GET https://localhost:5001/api/stocks?query=TSLA
+
+<> 2021-06-19T141719.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesl
+
+<> 2021-06-19T141711.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tes
+
+<> 2021-06-19T141701.500.txt
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tes
+
+<> 2021-06-19T140853.500.txt
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesl
+
+<> 2021-06-19T140850.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140846.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140844.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140842.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140841.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140839.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140833.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140822.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140819.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140818.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140817.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140815.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140814.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140811.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140759.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140745.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140713.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T140209.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T112420.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T110533.500.txt
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T110252.500.txt
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T105911.500.txt
+
+###
+
 GET https://localhost:5001/api/stocks/TSLA
 
 <> 2021-06-19T081211.200.json

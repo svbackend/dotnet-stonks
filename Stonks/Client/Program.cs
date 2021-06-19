@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Stonks.Client.Helpers;
-using Stonks.Client.Repository;
 
 namespace Stonks.Client
 {
@@ -36,7 +35,6 @@ namespace Stonks.Client
             // todo google about AddTransient
             // services.AddTransient<IRepository, RepositoryInMemory>();
             services.AddScoped<IHttpService, HttpService>();
-            services.AddScoped<IMovieRepository, MovieRepository>();
         }
     }
 }

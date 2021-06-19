@@ -8,9 +8,19 @@
     <list default="true" id="6c34cfdb-39a7-4056-8f45-85ed10ca45d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Client/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Client/Stonks.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/Stonks.Client.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Client/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Client/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Server/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Data/ApplicationDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Server/Migrations/20210619081458_InitTables.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Server/Migrations/20210619081458_InitTables.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Server/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +40,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Stonks/Server/Services/MoviesDbService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/714572DA-9830-48B1-BF3A-8C1360A6A2C4/15/LayoutComponentBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/77EDC676-5BD5-4301-B2F3-6E0F4ED17E40/B8/HttpRequestHeaders.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/77EDC676-5BD5-4301-B2F3-6E0F4ED17E40/49/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
@@ -41,24 +50,28 @@
       <option value="$PROJECT_DIR$/Stonks/Client/Properties/launchSettings.json" />
       <option value="$PROJECT_DIR$/Stonks/Client/Shared/MainLayout.razor.css" />
       <option value="$PROJECT_DIR$/Stonks/Client/Shared/MainLayout.razor" />
-      <option value="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" />
       <option value="$PROJECT_DIR$/Stonks/Server/Properties/launchSettings.json" />
       <option value="$PROJECT_DIR$/Stonks/Shared/Models/Ticker.cs" />
-      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" />
-      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" />
-      <option value="$PROJECT_DIR$/Stonks/Server/Data/ApplicationDbContext.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/IHttpService.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/HttpResponseWrapper.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/HttpService.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Utils/SnakeCaseNamingPolicy.cs" />
-      <option value="$PROJECT_DIR$/README.md" />
-      <option value="$PROJECT_DIR$/Stonks/Server/Startup.cs" />
       <option value="$PROJECT_DIR$/Stonks/Shared/.gitignore" />
       <option value="$PROJECT_DIR$/.gitignore" />
-      <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" />
-      <option value="$PROJECT_DIR$/api.http" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Client/Program.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Client/Shared/NavMenu.razor" />
+      <option value="$PROJECT_DIR$/Stonks/Client/_Imports.razor" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Startup.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" />
+      <option value="$PROJECT_DIR$/api.http" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Data/ApplicationDbContext.cs" />
+      <option value="$PROJECT_DIR$/README.md" />
+      <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e6bb57a5-aa75-4410-ae49-3cd6e4fdb977/console.sql" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1u1lcXm63AgTNE3bUTRADfp6VPC" />
@@ -67,13 +80,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3501355" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PostgreSQL, Greenplum, Redshift" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Stonks.Server">
@@ -145,8 +159,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.api#3" />
         <item itemvalue="HTTP Request.api#2" />
+        <item itemvalue="HTTP Request.api#3" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +181,8 @@
       <workItem from="1623977539931" duration="5205000" />
       <workItem from="1624017223921" duration="1797000" />
       <workItem from="1624039156294" duration="7119000" />
-      <workItem from="1624077010465" duration="2488000" />
+      <workItem from="1624077010465" duration="6708000" />
+      <workItem from="1624083745767" duration="16902000" />
     </task>
     <servers />
   </component>
@@ -193,56 +208,56 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs</url>
-          <line>95</line>
-          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" initialLine="36" containingFunctionPresentation="method 'FindStocks'">
-            <startOffsets>
-              <option value="2590" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2693" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs</url>
-          <line>45</line>
-          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" initialLine="41" containingFunctionPresentation="method 'FindStocksByTickerOrCompany'">
-            <startOffsets>
-              <option value="1414" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1447" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs</url>
-          <line>100</line>
-          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" initialLine="100" containingFunctionPresentation="method 'FindStockByTicker'">
-            <startOffsets>
-              <option value="2828" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2904" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs</url>
-          <line>52</line>
+          <line>65</line>
           <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" initialLine="52" containingFunctionPresentation="method 'FindStockByTicker'">
             <startOffsets>
-              <option value="1631" />
+              <option value="1930" />
             </startOffsets>
             <endOffsets>
-              <option value="1653" />
+              <option value="1952" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs</url>
+          <line>58</line>
+          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" initialLine="56" containingFunctionPresentation="method 'FindStocksByTickerOrCompany'">
+            <startOffsets>
+              <option value="1732" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1746" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Stonks/Server/Services/DbService.cs</url>
+          <line>61</line>
+          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" initialLine="61" containingFunctionPresentation="method 'SyncStockPreviews'">
+            <startOffsets>
+              <option value="2491" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2520" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Stonks/Server/Services/DbService.cs</url>
+          <line>73</line>
+          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" initialLine="73" containingFunctionPresentation="method 'SyncStockPreviews'">
+            <startOffsets>
+              <option value="3318" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3351" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

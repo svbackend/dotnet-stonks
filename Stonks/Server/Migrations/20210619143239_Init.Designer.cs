@@ -11,8 +11,8 @@ using Stonks.Shared.Models;
 namespace Stonks.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210619081458_InitTables")]
-    partial class InitTables
+    [Migration("20210619143239_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -338,7 +338,6 @@ namespace Stonks.Server.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Cik")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Country")
@@ -416,6 +415,9 @@ namespace Stonks.Server.Migrations
                     b.HasIndex("Cik")
                         .IsUnique();
 
+                    b.HasIndex("Figi")
+                        .IsUnique();
+
                     b.ToTable("Companies");
                 });
 
@@ -431,10 +433,6 @@ namespace Stonks.Server.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("IdStock")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("text");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
@@ -442,6 +440,10 @@ namespace Stonks.Server.Migrations
                         .HasColumnType("market");
 
                     b.Property<string>("PrimaryExchange")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("text");
 

@@ -30,6 +30,10 @@ namespace Stonks.Server.Data
                 .HasIndex(model => model.Cik)
                 .IsUnique();
             
+            builder.Entity<Company>()
+                .HasIndex(model => model.Figi)
+                .IsUnique();
+
             builder.HasPostgresEnum<Market>();
 
             base.OnModelCreating(builder);

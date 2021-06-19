@@ -5,7 +5,7 @@ using Stonks.Shared.Models;
 
 namespace Stonks.Server.Migrations
 {
-    public partial class InitTables : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -58,7 +58,7 @@ namespace Stonks.Server.Migrations
                     IdCompany = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Cik = table.Column<string>(type: "text", nullable: false),
+                    Cik = table.Column<string>(type: "text", nullable: true),
                     Logo = table.Column<string>(type: "text", nullable: true),
                     Listdate = table.Column<DateTime>(type: "timestamp without time zone", nullable: true),
                     Bloomberg = table.Column<string>(type: "text", nullable: true),
@@ -240,12 +240,12 @@ namespace Stonks.Server.Migrations
                 {
                     Ticker = table.Column<string>(type: "text", nullable: false),
                     IdCompany = table.Column<int>(type: "integer", nullable: false),
-                    IdStock = table.Column<string>(type: "text", nullable: true),
                     Market = table.Column<Market>(type: "market", nullable: false),
                     Currency = table.Column<string>(type: "text", nullable: false),
                     PrimaryExchange = table.Column<string>(type: "text", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    Type = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -299,6 +299,12 @@ namespace Stonks.Server.Migrations
                 name: "IX_Companies_Cik",
                 table: "Companies",
                 column: "Cik",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Companies_Figi",
+                table: "Companies",
+                column: "Figi",
                 unique: true);
 
             migrationBuilder.CreateIndex(

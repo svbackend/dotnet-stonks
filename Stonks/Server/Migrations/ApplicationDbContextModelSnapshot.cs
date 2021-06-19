@@ -336,7 +336,6 @@ namespace Stonks.Server.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Cik")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Country")
@@ -414,6 +413,9 @@ namespace Stonks.Server.Migrations
                     b.HasIndex("Cik")
                         .IsUnique();
 
+                    b.HasIndex("Figi")
+                        .IsUnique();
+
                     b.ToTable("Companies");
                 });
 
@@ -429,10 +431,6 @@ namespace Stonks.Server.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("IdStock")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("text");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
@@ -440,6 +438,10 @@ namespace Stonks.Server.Migrations
                         .HasColumnType("market");
 
                     b.Property<string>("PrimaryExchange")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("text");
 

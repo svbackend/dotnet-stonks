@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Stonks.Server.Data;
@@ -24,6 +25,8 @@ namespace Stonks.Server.Services
         public string PrimaryExchange { get; set; }
         public string Ticker { get; set; }
         public string Type { get; set; }
+        
+        public string CompositeFigi { get; set; }
     }
 
     public class TickerDataProvider
@@ -40,17 +43,20 @@ namespace Stonks.Server.Services
         public async Task<IEnumerable<PolygonStockPreview>> FindStocksByTickerOrCompany(string query)
         {
             var response = await _polygon.FindStocks(query);
+            IEnumerable<PolygonStockPreview> stocks;
 
             if (response.Success)
             {
-                await _db.SyncStockPreviews(response.Response.Results);
+                stocks = response.Response.Results;
+                await _db.SyncStockPreviews(stocks);
             }
             else
             {
-                // todo try to find stocks in our db
+                stocks = await _db.FindStocksByQuery(query);
+                
             }
 
-            return response.Response.Results;
+            return stocks;
         }
 
         public async Task<PolygonStockDetails> FindStockByTicker(string ticker)

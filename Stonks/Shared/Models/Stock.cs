@@ -15,9 +15,6 @@ namespace Stonks.Shared.Models
 
     public class Stock
     {
-        [Key]
-        public string Id { get; set; }
-        
         [Required]
         public string Ticker { get; set; }
         
@@ -41,18 +38,8 @@ namespace Stonks.Shared.Models
         
         [Required]
         public DateTime UpdatedAt { get; set; }
-        
-        // "ticker":"APLE",
-        // "name":"Apple Hospitality REIT, Inc.",
-        // "market":"stocks",
-        // "locale":"us",
-        // "primary_exchange":"XNYS",
-        // "type":"CS",
-        // "active":true,
-        // "currency_name":"usd",
-        // "cik":"0001418121",
-        // "composite_figi":"BBG006473QX9",
-        // "share_class_figi":"BBG006473QY8",
-        // "last_updated_utc":"2021-06-16T00:00:00Z"
+
+        [Required]
+        public string Type { get; set; }
     }
 }
