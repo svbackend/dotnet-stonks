@@ -6,6 +6,8 @@
 
 `cd Server && dotnet ef database update`
 
+`cd Server && dotnet user-secrets set "PolygonApiKey" "YOUR API KEY FROM polygon.io"`
+
 ### Useful commands
 
 `dotnet user-secrets init`

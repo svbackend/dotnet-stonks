@@ -1,3 +1,15 @@
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T075148.200.json
+
+###
+
+GET https://localhost:5001/api/stocks?query=Tesla
+
+<> 2021-06-19T074458.500.txt
+
+###
+
 GET https://localhost:5001/api/stocks
 
 <> 2021-06-18T212826.200.json

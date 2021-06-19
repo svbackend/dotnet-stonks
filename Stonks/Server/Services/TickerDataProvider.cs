@@ -25,17 +25,24 @@ namespace Stonks.Server.Services
 
     public class TickerDataProvider
     {
-        private readonly IHttpService _httpService;
+        private readonly PolygonHttpService _polygon;
 
-        public TickerDataProvider(IHttpService httpService)
+        public TickerDataProvider(PolygonHttpService polygon)
         {
-            _httpService = httpService;
+            _polygon = polygon;
         }
 
         public async Task<IEnumerable<PolygonStockPreview>> FindStocksByTickerOrCompany(string query)
         {
-            var response = await _httpService.Get<PolygonTickersResponse>($"https://api.polygon.io/v3/reference/tickers?search=A&active=true&sort=ticker&order=asc&limit=10");
+            var response = await _polygon.FindStocks(query);
 
+            if (!response.Success)
+            {
+                // todo try to find stocks in our db
+            }
+            // 1. Add api.polygon.io as baseAddress of httpClient
+            // 2. Add ?apiKey=xxx to query or Authorization: Bearer XXX to headers
+            
             return response.Response.Results;
         }
 

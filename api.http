@@ -7,4 +7,4 @@ Content-Type: application/json
 
 ###
 
-GET https://localhost:5001/api/stocks
+GET https://localhost:5001/api/stocks?query=Tesla

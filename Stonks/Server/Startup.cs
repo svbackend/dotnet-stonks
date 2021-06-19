@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,7 @@ using Stonks.Server.Data;
 using Stonks.Server.Services;
 using Stonks.Shared.Models;
 using System.Linq;
+using System.Net.Http.Headers;
 
 namespace Stonks.Server
 {
@@ -31,6 +33,8 @@ namespace Stonks.Server
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             
             services.AddAutoMapper(typeof(Startup));
+
+            services.AddScoped<PolygonHttpService>();
 
             services.AddScoped<IMoviesDbService, MoviesDbService>();
             services.AddScoped<IHttpService, HttpService>();
