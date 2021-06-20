@@ -50,6 +50,8 @@ namespace Stonks.Shared.Models
                 ? DateTime.Now
                 : DateTime.ParseExact(s.Updated, "MM/dd/yyyy", new CultureInfo("en-US"));
             Type = s.Type;
+            
+            
 
             if (Currency == null)
             {

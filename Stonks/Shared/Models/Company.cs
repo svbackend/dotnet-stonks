@@ -74,32 +74,39 @@ namespace Stonks.Shared.Models
         // "last_updated_utc":"2021-06-16T00:00:00Z"
         public static Company CreateByStockDetails(PolygonStockDetails s)
         {
-            // 
-            return new Company
-            {
-                Name = s.Name,
-                Cik = s.Cik,
-                Logo = s.Logo,
-                Listdate = s.Listdate,
-                Bloomberg = s.Bloomberg,
-                Figi = s.Figi,
-                Lei = s.Lei,
-                Sic = s.Sic,
-                Country = s.Country,
-                Industry = s.Industry,
-                Sector = s.Sector,
-                Marketcap = s.Marketcap,
-                Employees = s.Employees,
-                Phone = s.Phone,
-                Ceo = s.Ceo,
-                Url = s.Url,
-                Description = s.Description,
-                HqAddress = s.HqAddress,
-                HqState = s.HqState,
-                HqCountry = s.HqCountry,
-                Type = s.Type,
-                Updated = s.Updated == null ? DateTime.Now : DateTime.ParseExact(s.Updated, "MM/dd/yyyy", new CultureInfo("en-US"))
-            };
+            var company = new Company();
+            company.UpdateByStockDetails(s);
+            return company;
+        }
+
+        public void UpdateByStockDetails(PolygonStockDetails s)
+        {
+            Name = s.Name;
+            Cik = s.Cik;
+            Logo = s.Logo;
+            Listdate = s.Listdate;
+            Bloomberg = s.Bloomberg;
+            Figi = s.Figi;
+            Lei = s.Lei;
+            Sic = s.Sic;
+            Country = s.Country;
+            Industry = s.Industry;
+            Sector = s.Sector;
+            Marketcap = s.Marketcap;
+            Employees = s.Employees;
+            Phone = s.Phone;
+            Ceo = s.Ceo;
+            Url = s.Url;
+            Description = s.Description;
+            HqAddress = s.HqAddress;
+            HqState = s.HqState;
+            HqCountry = s.HqCountry;
+            Type = s.Type;
+            Updated = s.Updated == null
+                ? DateTime.Now
+                : DateTime.ParseExact(s.Updated, "MM/dd/yyyy", new CultureInfo("en-US"));
+            Tags = s.Tags;
+            Similar = s.Similar;
         }
     }
 }

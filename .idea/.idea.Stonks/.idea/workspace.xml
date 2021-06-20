@@ -6,20 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c34cfdb-39a7-4056-8f45-85ed10ca45d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Stonks/Shared/Models/PolygonStockDetails.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/httpRequests/2021-06-18T212607.500.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/httpRequests/2021-06-18T212826.200.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Migrations/20210619143239_Init.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Migrations/20210619143239_Init.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Shared/Stonks.Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Shared/Stonks.Shared.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +58,11 @@
       <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e6bb57a5-aa75-4410-ae49-3cd6e4fdb977/console.sql" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" />
-      <option value="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" />
       <option value="$PROJECT_DIR$/api.http" />
-      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" />
-      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" />
       <option value="$PROJECT_DIR$/Stonks/Shared/Models/PolygonStockDetails.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Shared/Models/Company.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1u1lcXm63AgTNE3bUTRADfp6VPC" />
@@ -182,7 +174,7 @@
       <workItem from="1624039156294" duration="7119000" />
       <workItem from="1624077010465" duration="6708000" />
       <workItem from="1624083745767" duration="17655000" />
-      <workItem from="1624168199963" duration="7054000" />
+      <workItem from="1624168199963" duration="7885000" />
     </task>
     <servers />
   </component>
@@ -261,29 +253,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs</url>
-          <line>53</line>
+          <line>55</line>
           <properties documentPath="$PROJECT_DIR$/Stonks/Shared/Models/Stock.cs" initialLine="53" containingFunctionPresentation="method 'UpdateByStockDetails'">
             <startOffsets>
-              <option value="1478" />
+              <option value="1504" />
             </startOffsets>
             <endOffsets>
-              <option value="1499" />
+              <option value="1525" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs</url>
-          <line>62</line>
-          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" initialLine="62" containingFunctionPresentation="method 'FindStockByTicker'">
-            <startOffsets>
-              <option value="1843" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1899" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs</url>
@@ -297,6 +276,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Stonks/Server/Services/DbService.cs</url>
+          <line>159</line>
+          <properties documentPath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" initialLine="159" containingFunctionPresentation="method 'SyncStockDetails'">
+            <startOffsets>
+              <option value="6875" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6928" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

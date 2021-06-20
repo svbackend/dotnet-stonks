@@ -156,22 +156,21 @@ namespace Stonks.Server.Services
 
             if (company != null)
             {
+                company.UpdateByStockDetails(s);
+                _context.Entry(company).State = EntityState.Modified;
+                
                 var stock = await _context.Stocks
                     .SingleOrDefaultAsync(model => model.Ticker == s.Symbol && model.IdCompany == company.IdCompany);
                 if (stock != null)
                 {
-                    // todo update
                     stock.UpdateByStockDetails(s);
                     _context.Entry(stock).State = EntityState.Modified;
-                    await _context.SaveChangesAsync();
                 }
                 else
                 {
-                    // todo insert
                     stock = Stock.CreateByStockDetails(s);
                     stock.Company = company;
                     await _context.Stocks.AddAsync(stock);
-                    await _context.SaveChangesAsync();
                 }
             }
             else
@@ -181,8 +180,9 @@ namespace Stonks.Server.Services
                 stock.Company = company;
                 await _context.Companies.AddAsync(company);
                 await _context.Stocks.AddAsync(stock);
-                await _context.SaveChangesAsync();
             }
+            
+            await _context.SaveChangesAsync();
         }
 
         public async Task<PolygonStockDetails> FindStockByTicker(string ticker)
