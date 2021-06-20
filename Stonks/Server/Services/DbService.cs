@@ -109,30 +109,32 @@ namespace Stonks.Server.Services
             }
         }
 
-        private Task<Company> FindCompanyByStockPreview(PolygonStockPreview stock)
+        private async Task<Company> FindCompanyByStockPreview(PolygonStockPreview stock)
         {
-            return _context.Companies.SingleOrDefaultAsync(c =>
-                (c.Cik != null && c.Cik == stock.Cik) 
-                || (c.Figi != null && c.Figi == stock.CompositeFigi)
-                || c.Name == stock.Name);
+            return await FindCompany(stock.Cik, stock.CompositeFigi, stock.Name);
+        }
+        
+        private async Task<Company> FindCompanyByStockDetails(PolygonStockDetails stock)
+        {
+            return await FindCompany(stock.Cik, stock.Figi, stock.Name);
+        }
+
+        private async Task<Company> FindCompany(string cik, string figi, string name)
+        {
+            return await _context.Companies.SingleOrDefaultAsync(c =>
+                (c.Cik != null && c.Cik == cik) 
+                || (c.Figi != null && c.Figi == figi)
+                || c.Name == name);
         }
 
         public async Task<IEnumerable<PolygonStockPreview>> FindStocksByQuery(string query)
         {
-            /*
-             *         public bool Active { get; set; }
-        public string CurrencyName { get; set; }
-        public string LastUpdatedUtc { get; set; }
-        public string Market { get; set; }
-        public string Name { get; set; }
-        public string Cik { get; set; }
-        public string PrimaryExchange { get; set; }
-        public string Ticker { get; set; }
-        public string Type { get; set; }
-             */
+            var q = query.ToUpper();
 
             return await _context.Stocks
                 .Include(s => s.Company)
+                .Where(s => s.Ticker.Contains(q) || s.Company.Name.ToUpper().Contains(query.ToUpper()))
+                .OrderBy(s => s.Ticker)
                 .Select(s => new PolygonStockPreview
                 {
                     Active = s.IsActive,
@@ -146,6 +148,50 @@ namespace Stonks.Server.Services
                     Type = s.Type
                 })
                 .ToListAsync();
+        }
+
+        public async Task SyncStockDetails(PolygonStockDetails s)
+        {
+            var company = await FindCompanyByStockDetails(s);
+
+            if (company != null)
+            {
+                var stock = await _context.Stocks
+                    .SingleOrDefaultAsync(model => model.Ticker == s.Symbol && model.IdCompany == company.IdCompany);
+                if (stock != null)
+                {
+                    // todo update
+                    stock.UpdateByStockDetails(s);
+                    _context.Entry(stock).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    // todo insert
+                    stock = Stock.CreateByStockDetails(s);
+                    stock.Company = company;
+                    await _context.Stocks.AddAsync(stock);
+                    await _context.SaveChangesAsync();
+                }
+            }
+            else
+            {
+                company = Company.CreateByStockDetails(s);
+                var stock = Stock.CreateByStockDetails(s);
+                stock.Company = company;
+                await _context.Companies.AddAsync(company);
+                await _context.Stocks.AddAsync(stock);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<PolygonStockDetails> FindStockByTicker(string ticker)
+        {
+            return await _context.Stocks
+                .Include(s => s.Company)
+                .Where(model => model.Ticker == ticker.ToUpper())
+                .Select(s => PolygonStockDetails.CreateByStock(s))
+                .FirstOrDefaultAsync();
         }
     }
 }

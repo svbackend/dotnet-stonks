@@ -347,9 +347,6 @@ namespace Stonks.Server.Migrations
                     b.Property<long?>("Employees")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("ExchangeSymbol")
-                        .HasColumnType("text");
-
                     b.Property<string>("Figi")
                         .HasColumnType("text");
 
@@ -393,17 +390,14 @@ namespace Stonks.Server.Migrations
                     b.Property<string[]>("Similar")
                         .HasColumnType("text[]");
 
-                    b.Property<string>("Symbol")
-                        .HasColumnType("text");
-
                     b.Property<string[]>("Tags")
                         .HasColumnType("text[]");
 
                     b.Property<string>("Type")
                         .HasColumnType("text");
 
-                    b.Property<string>("Updated")
-                        .HasColumnType("text");
+                    b.Property<DateTime?>("Updated")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Url")
                         .HasColumnType("text");

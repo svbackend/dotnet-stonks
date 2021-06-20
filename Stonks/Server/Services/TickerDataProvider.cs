@@ -53,7 +53,6 @@ namespace Stonks.Server.Services
             else
             {
                 stocks = await _db.FindStocksByQuery(query);
-                
             }
 
             return stocks;
@@ -62,15 +61,19 @@ namespace Stonks.Server.Services
         public async Task<PolygonStockDetails> FindStockByTicker(string ticker)
         {
             var response = await _polygon.FindStockByTicker(ticker);
+            PolygonStockDetails stock;
 
-            if (!response.Success)
+            if (response.Success)
             {
-                // todo try to find stocks in our db
+                stock = response.Response;
+                await _db.SyncStockDetails(stock);
             }
-            // 1. Add api.polygon.io as baseAddress of httpClient
-            // 2. Add ?apiKey=xxx to query or Authorization: Bearer XXX to headers
-            
-            return response.Response;
+            else
+            {
+                stock = await _db.FindStockByTicker(ticker);
+            }
+
+            return stock;
         }
 
         // Search by ticker or company name - https://api.polygon.io/v3/reference/tickers?search=Apple&active=true&sort=ticker&order=asc&limit=10
