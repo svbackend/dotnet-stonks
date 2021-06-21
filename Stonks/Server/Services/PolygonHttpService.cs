@@ -41,6 +41,11 @@ namespace Stonks.Server.Services
         {
             return await Get<PolygonStockDetails>($"/v1/meta/symbols/{ticker}/company");
         }
+        
+        public async Task<HttpResponseWrapper<PolygonChartResponse>> GetChartByTicker(string ticker)
+        {
+            return await Get<PolygonChartResponse>($"/v2/aggs/ticker/{ticker}/range/1/day/2020-06-01/2020-06-17");
+        }
 
         private async Task<HttpResponseWrapper<T>> Get<T>(string url)
         {

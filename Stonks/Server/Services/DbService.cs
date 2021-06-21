@@ -193,5 +193,15 @@ namespace Stonks.Server.Services
                 .Select(s => PolygonStockDetails.CreateByStock(s))
                 .FirstOrDefaultAsync();
         }
+
+        public async Task SyncChart(PolygonChartResponse chart)
+        {
+            // upsert chart.Result with ticker = chart.Ticker
+        }
+
+        public async Task<PolygonChartResponse> GetChartByTicker(string ticker)
+        {
+            
+        }
     }
 }

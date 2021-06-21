@@ -75,6 +75,24 @@ namespace Stonks.Server.Services
 
             return stock;
         }
+        
+        public async Task<PolygonChartResponse> GetChartByTicker(string ticker)
+        {
+            var response = await _polygon.GetChartByTicker(ticker);
+            PolygonChartResponse chart;
+
+            if (response.Success)
+            {
+                chart = response.Response;
+                await _db.SyncChart(chart);
+            }
+            else
+            {
+                chart = await _db.GetChartByTicker(ticker);
+            }
+
+            return chart;
+        }
 
         // Search by ticker or company name - https://api.polygon.io/v3/reference/tickers?search=Apple&active=true&sort=ticker&order=asc&limit=10
 

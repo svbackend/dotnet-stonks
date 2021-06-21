@@ -62,9 +62,9 @@ namespace Stonks.Server.Controllers
         [HttpGet("{ticker}/chart")]
         public async Task<IActionResult> GetStockChart(string ticker)
         {
-            var stock = await _tickerDataProvider.FindStockByTicker(ticker);
+            var chart = await _tickerDataProvider.FindStockByTicker(ticker);
             
-            return Ok(stock);
+            return Ok(chart);
         }
     }
 }
