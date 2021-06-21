@@ -21,34 +21,7 @@ namespace Stonks.Server.Controllers
         public async Task<IActionResult> GetStocks([FromQuery] string query)
         {
             var stocks = await _tickerDataProvider.FindStocksByTickerOrCompany(query);
-            
-            /* inside:
-             * 
-             * var (stocks, error) = stocksDataProvider.findByTickerOrCompany(query);
-             *
-             * if (error != null) {
-             *     stocks = stocksRepository.findByTickerOrCompany(query);
-             * }
-             *
-             * return stocks;
-             */
-            
-            /*
-             * <IEnumerable<StockDto>, IError> findByTickerOrCompany(string query) {
-             *    IEnumerable<StockDto> stocks;
-             *    try {
-             *      stocks = apiClient.search(query)
-             *    } catch (ApiLimitExceededException e) {
-             *       return (null, new Error(...));
-             *    }
-             *
-             *    todo cache results
-             * 
-             *    return stocks;
-             * }
-             */
-            
-            
+
             return Ok(stocks);
         }
 
@@ -83,6 +56,14 @@ namespace Stonks.Server.Controllers
              * }
              */
 
+            return Ok(stock);
+        }
+
+        [HttpGet("{ticker}/chart")]
+        public async Task<IActionResult> GetStockChart(string ticker)
+        {
+            var stock = await _tickerDataProvider.FindStockByTicker(ticker);
+            
             return Ok(stock);
         }
     }
