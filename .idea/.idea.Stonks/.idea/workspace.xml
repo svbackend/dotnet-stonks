@@ -6,11 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c34cfdb-39a7-4056-8f45-85ed10ca45d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Stonks/Shared/Models/UserStock.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Stonks/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Controllers/StocksController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +26,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5FFE8917-0314-4A7B-A075-2282CF0DB7D2/3/IdentityUser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/714572DA-9830-48B1-BF3A-8C1360A6A2C4/15/LayoutComponentBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/77EDC676-5BD5-4301-B2F3-6E0F4ED17E40/B8/HttpRequestHeaders.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/77EDC676-5BD5-4301-B2F3-6E0F4ED17E40/49/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
@@ -63,6 +61,7 @@
       <option value="$PROJECT_DIR$/Stonks/Server/Services/PolygonHttpService.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/TickerDataProvider.cs" />
       <option value="$PROJECT_DIR$/Stonks/Server/Services/DbService.cs" />
+      <option value="$PROJECT_DIR$/Stonks/Shared/Models/UserStock.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1u1lcXm63AgTNE3bUTRADfp6VPC" />
@@ -177,7 +176,8 @@
       <workItem from="1624168199963" duration="8501000" />
       <workItem from="1624213004496" duration="2114000" />
       <workItem from="1624215173643" duration="2415000" />
-      <workItem from="1624298612696" duration="1079000" />
+      <workItem from="1624298612696" duration="1611000" />
+      <workItem from="1624342383055" duration="493000" />
     </task>
     <servers />
   </component>
