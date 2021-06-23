@@ -133,7 +133,7 @@ namespace Stonks.Server.Services
 
             return await _context.Stocks
                 .Include(s => s.Company)
-                .Where(s => s.Ticker.Contains(q) || s.Company.Name.ToUpper().Contains(query.ToUpper()))
+                .Where(s => s.Ticker.Contains(q) || s.Company.Name.ToUpper().Contains(q))
                 .OrderBy(s => s.Ticker)
                 .Select(s => new PolygonStockPreview
                 {
