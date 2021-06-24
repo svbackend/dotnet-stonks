@@ -11,6 +11,7 @@ namespace Stonks.Server.Data
     {
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Company> Companies { get; set; }
+        public DbSet<StockChartOhlcItem> ChartOhlcItems { get; set; }
 
         public ApplicationDbContext(
             DbContextOptions options,

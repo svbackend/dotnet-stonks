@@ -199,9 +199,26 @@ namespace Stonks.Server.Services
             // upsert chart.Result with ticker = chart.Ticker
         }
 
-        public async Task<ChartItem[]> GetChartItemsByTicker(string ticker)
+        public async Task<ChartItem[]> GetChartItemsByTicker(string ticker, DateTime? from, DateTime? to)
         {
-            // 
+            DateTime fromDate, toDate;
+            
+            if (from.HasValue && to.HasValue)
+            {
+                fromDate = from.Value;
+                toDate = to.Value;
+            }
+            else
+            {
+                fromDate = DateTime.Today.AddDays(-7);
+                toDate = DateTime.Today;
+            }
+
+            return await _context.ChartOhlcItems
+                .Include(i => i.Stock)
+                .Where(i => i.Stock.Ticker == ticker && i.Timestamp >= fromDate && i.Timestamp <= toDate)
+                .Select(i => ChartItem.CreateByChartOhlcItem(i))
+                .ToArrayAsync();
         }
     }
 }

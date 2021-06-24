@@ -1,3 +1,5 @@
+using System;
+
 namespace Stonks.Shared.Models
 {
     public class PolygonChartResponse
@@ -36,5 +38,20 @@ namespace Stonks.Shared.Models
         public long T { get; set; }
 
         public long N { get; set; }
+
+        public static ChartItem CreateByChartOhlcItem(StockChartOhlcItem i)
+        {
+            return new()
+            {
+                V = i.V,
+                Vw = i.Vw,
+                O = i.O,
+                C = i.C,
+                H = i.H,
+                L = i.L,
+                T = ((DateTimeOffset) i.Timestamp).ToUnixTimeSeconds(),
+                N = i.N
+            };
+        }
     }
 }
