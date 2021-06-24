@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -76,22 +77,22 @@ namespace Stonks.Server.Services
             return stock;
         }
         
-        public async Task<PolygonChartResponse> GetChartByTicker(string ticker)
+        public async Task<ChartItem[]> GetChartByTicker(string ticker, DateTime? from, DateTime? to)
         {
-            var response = await _polygon.GetChartByTicker(ticker);
-            PolygonChartResponse chart;
+            var response = await _polygon.GetChartByTicker(ticker, from, to);
+            ChartItem[] chartItems;
 
             if (response.Success)
             {
-                chart = response.Response;
-                await _db.SyncChart(chart);
+                chartItems = response.Response.Results;
+                await _db.SyncChart(chartItems);
             }
             else
             {
-                chart = await _db.GetChartByTicker(ticker);
+                chartItems = await _db.GetChartItemsByTicker(ticker, from, to);
             }
 
-            return chart;
+            return chartItems;
         }
 
         // Search by ticker or company name - https://api.polygon.io/v3/reference/tickers?search=Apple&active=true&sort=ticker&order=asc&limit=10

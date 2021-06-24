@@ -42,9 +42,23 @@ namespace Stonks.Server.Services
             return await Get<PolygonStockDetails>($"/v1/meta/symbols/{ticker}/company");
         }
         
-        public async Task<HttpResponseWrapper<PolygonChartResponse>> GetChartByTicker(string ticker)
+        public async Task<HttpResponseWrapper<PolygonChartResponse>> GetChartByTicker(string ticker, DateTime? from, DateTime? to)
         {
-            return await Get<PolygonChartResponse>($"/v2/aggs/ticker/{ticker}/range/1/day/2020-06-01/2020-06-17");
+            string fromDate, toDate;
+            var polygonDateFormat = "dd-MM-yyyy";
+            
+            if (from.HasValue && to.HasValue)
+            {
+                fromDate = from.Value.ToString(polygonDateFormat);
+                toDate = to.Value.ToString(polygonDateFormat);
+            }
+            else
+            {
+                fromDate = DateTime.Today.AddDays(-7).ToString(polygonDateFormat);
+                toDate = DateTime.Today.ToString(polygonDateFormat);
+            }
+            
+            return await Get<PolygonChartResponse>($"/v2/aggs/ticker/{ticker}/range/1/day/{fromDate}/{toDate}");
         }
 
         private async Task<HttpResponseWrapper<T>> Get<T>(string url)

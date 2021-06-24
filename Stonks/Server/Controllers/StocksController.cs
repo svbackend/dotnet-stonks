@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Stonks.Server.Services;
@@ -60,11 +61,13 @@ namespace Stonks.Server.Controllers
         }
 
         [HttpGet("{ticker}/chart")]
-        public async Task<IActionResult> GetStockChart(string ticker)
+        public async Task<IActionResult> GetStockChart(string ticker, [FromQuery] DateTime? from, [FromQuery] DateTime? to)
         {
-            var chart = await _tickerDataProvider.FindStockByTicker(ticker);
+            var chart = await _tickerDataProvider.GetChartByTicker(ticker, from, to);
             
             return Ok(chart);
         }
+        
+        // todo get user's favourite stocks endpoint 
     }
 }

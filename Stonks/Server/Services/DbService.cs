@@ -194,14 +194,14 @@ namespace Stonks.Server.Services
                 .FirstOrDefaultAsync();
         }
 
-        public async Task SyncChart(PolygonChartResponse chart)
+        public async Task SyncChart(ChartItem[] chartItems)
         {
             // upsert chart.Result with ticker = chart.Ticker
         }
 
-        public async Task<PolygonChartResponse> GetChartByTicker(string ticker)
+        public async Task<ChartItem[]> GetChartItemsByTicker(string ticker)
         {
-            
+            // 
         }
     }
 }
