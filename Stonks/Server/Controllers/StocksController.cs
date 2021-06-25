@@ -60,7 +60,7 @@ namespace Stonks.Server.Controllers
             return Ok(stock);
         }
 
-        [HttpGet("{ticker}/chart")]
+        [HttpGet("{ticker}/ohlc")]
         public async Task<IActionResult> GetStockChart(string ticker, [FromQuery] DateTime? from, [FromQuery] DateTime? to)
         {
             var chart = await _tickerDataProvider.GetChartByTicker(ticker, from, to);

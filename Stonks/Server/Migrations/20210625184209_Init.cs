@@ -236,9 +236,11 @@ namespace Stonks.Server.Migrations
                 name: "Stocks",
                 columns: table => new
                 {
+                    IdStock = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Ticker = table.Column<string>(type: "text", nullable: false),
-                    IdCompany = table.Column<int>(type: "integer", nullable: false),
                     Market = table.Column<Market>(type: "market", nullable: false),
+                    IdCompany = table.Column<int>(type: "integer", nullable: false),
                     Currency = table.Column<string>(type: "text", nullable: false),
                     PrimaryExchange = table.Column<string>(type: "text", nullable: false),
                     IsActive = table.Column<bool>(type: "boolean", nullable: false),
@@ -247,12 +249,38 @@ namespace Stonks.Server.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Stocks", x => new { x.IdCompany, x.Ticker });
+                    table.PrimaryKey("PK_Stocks", x => x.IdStock);
                     table.ForeignKey(
                         name: "FK_Stocks_Companies_IdCompany",
                         column: x => x.IdCompany,
                         principalTable: "Companies",
                         principalColumn: "IdCompany",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ChartOhlcItems",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "text", nullable: false),
+                    IdStock = table.Column<int>(type: "integer", nullable: false),
+                    V = table.Column<long>(type: "bigint", nullable: false),
+                    Vw = table.Column<double>(type: "double precision", nullable: false),
+                    O = table.Column<double>(type: "double precision", nullable: false),
+                    C = table.Column<double>(type: "double precision", nullable: false),
+                    H = table.Column<double>(type: "double precision", nullable: false),
+                    L = table.Column<double>(type: "double precision", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "Date", nullable: false),
+                    N = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ChartOhlcItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ChartOhlcItems_Stocks_IdStock",
+                        column: x => x.IdStock,
+                        principalTable: "Stocks",
+                        principalColumn: "IdStock",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -294,6 +322,11 @@ namespace Stonks.Server.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_ChartOhlcItems_IdStock",
+                table: "ChartOhlcItems",
+                column: "IdStock");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Companies_Cik",
                 table: "Companies",
                 column: "Cik",
@@ -330,6 +363,12 @@ namespace Stonks.Server.Migrations
                 name: "IX_PersistedGrants_SubjectId_SessionId_Type",
                 table: "PersistedGrants",
                 columns: new[] { "SubjectId", "SessionId", "Type" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Stocks_IdCompany_Ticker",
+                table: "Stocks",
+                columns: new[] { "IdCompany", "Ticker" },
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -350,19 +389,22 @@ namespace Stonks.Server.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "ChartOhlcItems");
+
+            migrationBuilder.DropTable(
                 name: "DeviceCodes");
 
             migrationBuilder.DropTable(
                 name: "PersistedGrants");
 
             migrationBuilder.DropTable(
-                name: "Stocks");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Stocks");
 
             migrationBuilder.DropTable(
                 name: "Companies");

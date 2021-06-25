@@ -11,7 +11,7 @@ using Stonks.Shared.Models;
 namespace Stonks.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210620073742_Init")]
+    [Migration("20210625184209_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -417,15 +417,17 @@ namespace Stonks.Server.Migrations
 
             modelBuilder.Entity("Stonks.Shared.Models.Stock", b =>
                 {
-                    b.Property<int>("IdCompany")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Ticker")
-                        .HasColumnType("text");
+                    b.Property<int>("IdStock")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Currency")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("IdCompany")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
@@ -437,6 +439,10 @@ namespace Stonks.Server.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Ticker")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("text");
@@ -444,9 +450,52 @@ namespace Stonks.Server.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.HasKey("IdCompany", "Ticker");
+                    b.HasKey("IdStock");
+
+                    b.HasIndex("IdCompany", "Ticker")
+                        .IsUnique();
 
                     b.ToTable("Stocks");
+                });
+
+            modelBuilder.Entity("Stonks.Shared.Models.StockChartOhlcItem", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("text");
+
+                    b.Property<double>("C")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("H")
+                        .HasColumnType("double precision");
+
+                    b.Property<int>("IdStock")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("L")
+                        .HasColumnType("double precision");
+
+                    b.Property<long>("N")
+                        .HasColumnType("bigint");
+
+                    b.Property<double>("O")
+                        .HasColumnType("double precision");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("Date");
+
+                    b.Property<long>("V")
+                        .HasColumnType("bigint");
+
+                    b.Property<double>("Vw")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdStock");
+
+                    b.ToTable("ChartOhlcItems");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -509,6 +558,17 @@ namespace Stonks.Server.Migrations
                         .IsRequired();
 
                     b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("Stonks.Shared.Models.StockChartOhlcItem", b =>
+                {
+                    b.HasOne("Stonks.Shared.Models.Stock", "Stock")
+                        .WithMany()
+                        .HasForeignKey("IdStock")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Stock");
                 });
 #pragma warning restore 612, 618
         }
