@@ -33,13 +33,17 @@ namespace Stonks.Server.Services
             await using var conn = GetConnection();
             await conn.OpenAsync();
 
+            // i dont like this part, especially because we have ON CONFLICT ON CONSTRAINT IX_Stocks_IdCompany_Ticker
+            // which works nice and fast but.. It's hardcoded constraint name, if something will be changed in db
+            // like rename of constraint or fields - this will no longer work
+
             var sql = @"INSERT INTO ""Stocks""
     (""Ticker"", ""IdCompany"", ""Market"", ""Currency"", ""PrimaryExchange"", ""Type"", ""IsActive"", ""UpdatedAt"") VALUES 
     (@Ticker, @IdCompany, @Market, @Currency, @PrimaryExchange, @Type, @IsActive, @UpdatedAt)
-            ON CONFLICT ON CONSTRAINT ""PK_Stocks"" DO UPDATE SET
+            ON CONFLICT ON CONSTRAINT ""IX_Stocks_IdCompany_Ticker"" DO UPDATE SET
             ""Ticker"" = @Ticker, ""Market"" = @Market, ""Currency"" = @Currency, ""PrimaryExchange"" = @PrimaryExchange, ""Type"" = @Type, ""IsActive"" = @IsActive, ""UpdatedAt"" = @UpdatedAt;
 ";
-            
+
             await using var transaction = await conn.BeginTransactionAsync();
             await using var cmd = new NpgsqlCommand(sql, conn) {Transaction = transaction};
 
@@ -56,11 +60,12 @@ namespace Stonks.Server.Services
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("Name", stock.Name);
                     cmd.Parameters.AddWithValue("Cik", stock.Cik != null ? stock.Cik : DBNull.Value);
-                    cmd.Parameters.AddWithValue("Figi", stock.CompositeFigi != null ? stock.CompositeFigi : DBNull.Value);
+                    cmd.Parameters.AddWithValue("Figi",
+                        stock.CompositeFigi != null ? stock.CompositeFigi : DBNull.Value);
                     var idCompany = await cmd.ExecuteScalarAsync();
-                    
+
                     Console.WriteLine(idCompany);
-                    
+
                     cmd.CommandText = sql;
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("IdCompany", idCompany);
@@ -113,7 +118,7 @@ namespace Stonks.Server.Services
         {
             return await FindCompany(stock.Cik, stock.CompositeFigi, stock.Name);
         }
-        
+
         private async Task<Company> FindCompanyByStockDetails(PolygonStockDetails stock)
         {
             return await FindCompany(stock.Cik, stock.Figi, stock.Name);
@@ -122,7 +127,7 @@ namespace Stonks.Server.Services
         private async Task<Company> FindCompany(string cik, string figi, string name)
         {
             return await _context.Companies.SingleOrDefaultAsync(c =>
-                (c.Cik != null && c.Cik == cik) 
+                (c.Cik != null && c.Cik == cik)
                 || (c.Figi != null && c.Figi == figi)
                 || c.Name == name);
         }
@@ -158,7 +163,7 @@ namespace Stonks.Server.Services
             {
                 company.UpdateByStockDetails(s);
                 _context.Entry(company).State = EntityState.Modified;
-                
+
                 var stock = await _context.Stocks
                     .SingleOrDefaultAsync(model => model.Ticker == s.Symbol && model.IdCompany == company.IdCompany);
                 if (stock != null)
@@ -181,7 +186,7 @@ namespace Stonks.Server.Services
                 await _context.Companies.AddAsync(company);
                 await _context.Stocks.AddAsync(stock);
             }
-            
+
             await _context.SaveChangesAsync();
         }
 
@@ -278,7 +283,7 @@ namespace Stonks.Server.Services
         public async Task<ChartItem[]> GetChartItemsByTicker(string ticker, DateTime? from, DateTime? to)
         {
             DateTime fromDate, toDate;
-            
+
             if (from.HasValue && to.HasValue)
             {
                 fromDate = from.Value;
