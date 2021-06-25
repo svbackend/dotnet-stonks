@@ -16,6 +16,10 @@ namespace Stonks.Shared.Models
 
     public class Stock
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int IdStock { get; set; }
+        
         [Required] public string Ticker { get; set; }
 
         [Required] public Market Market { get; set; }

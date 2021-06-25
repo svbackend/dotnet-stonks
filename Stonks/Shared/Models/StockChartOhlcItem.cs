@@ -35,6 +35,8 @@ namespace Stonks.Shared.Models
         public double L { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
+        [Column(TypeName = "Date")]
         public DateTime Timestamp { get; set; }
 
         [Required]
