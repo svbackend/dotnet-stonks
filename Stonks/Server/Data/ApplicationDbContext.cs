@@ -25,8 +25,10 @@ namespace Stonks.Server.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Stock>()
-                .HasIndex(model => new {model.IdCompany, model.Ticker})
-                .IsUnique();
+                .HasAlternateKey(model => new {model.IdCompany, model.Ticker});
+            
+            builder.Entity<StockChartOhlcItem>()
+                .HasAlternateKey(model => new {model.IdStock, model.Timestamp});
             
             builder.Entity<Company>()
                 .HasIndex(model => model.Cik)

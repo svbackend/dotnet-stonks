@@ -250,6 +250,7 @@ namespace Stonks.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Stocks", x => x.IdStock);
+                    table.UniqueConstraint("AK_Stocks_IdCompany_Ticker", x => new { x.IdCompany, x.Ticker });
                     table.ForeignKey(
                         name: "FK_Stocks_Companies_IdCompany",
                         column: x => x.IdCompany,
@@ -262,9 +263,10 @@ namespace Stonks.Server.Migrations
                 name: "ChartOhlcItems",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "text", nullable: false),
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     IdStock = table.Column<int>(type: "integer", nullable: false),
-                    V = table.Column<long>(type: "bigint", nullable: false),
+                    V = table.Column<double>(type: "double precision", nullable: false),
                     Vw = table.Column<double>(type: "double precision", nullable: false),
                     O = table.Column<double>(type: "double precision", nullable: false),
                     C = table.Column<double>(type: "double precision", nullable: false),
@@ -276,6 +278,7 @@ namespace Stonks.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ChartOhlcItems", x => x.Id);
+                    table.UniqueConstraint("AK_ChartOhlcItems_IdStock_Timestamp", x => new { x.IdStock, x.Timestamp });
                     table.ForeignKey(
                         name: "FK_ChartOhlcItems_Stocks_IdStock",
                         column: x => x.IdStock,
@@ -322,11 +325,6 @@ namespace Stonks.Server.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_ChartOhlcItems_IdStock",
-                table: "ChartOhlcItems",
-                column: "IdStock");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Companies_Cik",
                 table: "Companies",
                 column: "Cik",
@@ -363,12 +361,6 @@ namespace Stonks.Server.Migrations
                 name: "IX_PersistedGrants_SubjectId_SessionId_Type",
                 table: "PersistedGrants",
                 columns: new[] { "SubjectId", "SessionId", "Type" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Stocks_IdCompany_Ticker",
-                table: "Stocks",
-                columns: new[] { "IdCompany", "Ticker" },
-                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

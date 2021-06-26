@@ -11,7 +11,7 @@ using Stonks.Shared.Models;
 namespace Stonks.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210625184209_Init")]
+    [Migration("20210626070131_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -452,17 +452,17 @@ namespace Stonks.Server.Migrations
 
                     b.HasKey("IdStock");
 
-                    b.HasIndex("IdCompany", "Ticker")
-                        .IsUnique();
+                    b.HasAlternateKey("IdCompany", "Ticker");
 
                     b.ToTable("Stocks");
                 });
 
             modelBuilder.Entity("Stonks.Shared.Models.StockChartOhlcItem", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("text");
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<double>("C")
                         .HasColumnType("double precision");
@@ -485,15 +485,15 @@ namespace Stonks.Server.Migrations
                     b.Property<DateTime>("Timestamp")
                         .HasColumnType("Date");
 
-                    b.Property<long>("V")
-                        .HasColumnType("bigint");
+                    b.Property<double>("V")
+                        .HasColumnType("double precision");
 
                     b.Property<double>("Vw")
                         .HasColumnType("double precision");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdStock");
+                    b.HasAlternateKey("IdStock", "Timestamp");
 
                     b.ToTable("ChartOhlcItems");
                 });

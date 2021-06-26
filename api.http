@@ -13,3 +13,7 @@ GET https://localhost:5001/api/stocks?query=Tes
 
 GET https://localhost:5001/api/stocks/TSLA
 
+###
+
+GET https://localhost:5001/api/stocks/TSLA/ohlc
+

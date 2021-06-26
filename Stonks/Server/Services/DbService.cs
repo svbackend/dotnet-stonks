@@ -33,14 +33,14 @@ namespace Stonks.Server.Services
             await using var conn = GetConnection();
             await conn.OpenAsync();
 
-            // i dont like this part, especially because we have ON CONFLICT ON CONSTRAINT IX_Stocks_IdCompany_Ticker
+            // i dont like this part, especially because we have ON CONFLICT ON CONSTRAINT AK_Stocks_IdCompany_Ticker
             // which works nice and fast but.. It's hardcoded constraint name, if something will be changed in db
             // like rename of constraint or fields - this will no longer work
 
             var sql = @"INSERT INTO ""Stocks""
     (""Ticker"", ""IdCompany"", ""Market"", ""Currency"", ""PrimaryExchange"", ""Type"", ""IsActive"", ""UpdatedAt"") VALUES 
     (@Ticker, @IdCompany, @Market, @Currency, @PrimaryExchange, @Type, @IsActive, @UpdatedAt)
-            ON CONFLICT ON CONSTRAINT ""IX_Stocks_IdCompany_Ticker"" DO UPDATE SET
+            ON CONFLICT ON CONSTRAINT ""AK_Stocks_IdCompany_Ticker"" DO UPDATE SET
             ""Ticker"" = @Ticker, ""Market"" = @Market, ""Currency"" = @Currency, ""PrimaryExchange"" = @PrimaryExchange, ""Type"" = @Type, ""IsActive"" = @IsActive, ""UpdatedAt"" = @UpdatedAt;
 ";
 
@@ -199,105 +199,51 @@ namespace Stonks.Server.Services
                 .FirstOrDefaultAsync();
         }
 
-        public async Task SyncChart(ChartItem[] chartItems)
+        public async Task SyncChart(PolygonChartResponse chart)
         {
-//             await using var conn = GetConnection();
-//             await conn.OpenAsync();
-//
-//             var sql = @"INSERT INTO ""Stocks""
-//     (""Ticker"", ""IdCompany"", ""Market"", ""Currency"", ""PrimaryExchange"", ""Type"", ""IsActive"", ""UpdatedAt"") VALUES 
-//     (@Ticker, @IdCompany, @Market, @Currency, @PrimaryExchange, @Type, @IsActive, @UpdatedAt)
-//             ON CONFLICT ON CONSTRAINT ""PK_Stocks"" DO UPDATE SET
-//             ""Ticker"" = @Ticker, ""Market"" = @Market, ""Currency"" = @Currency, ""PrimaryExchange"" = @PrimaryExchange, ""Type"" = @Type, ""IsActive"" = @IsActive, ""UpdatedAt"" = @UpdatedAt;
-// ";
-//             
-//             await using var transaction = await conn.BeginTransactionAsync();
-//             await using var cmd = new NpgsqlCommand(sql, conn) {Transaction = transaction};
-//
-//             foreach (var chartItem in chartItems)
-//             {
-//                 var company = await FindCompanyByStockPreview(stock);
-//
-//                 if (company == null)
-//                 {
-//                     cmd.CommandText = @"INSERT INTO ""Companies"" 
-//                         (""Name"", ""Cik"", ""Figi"") 
-//                     VALUES 
-//                         (@Name, @Cik, @Figi) RETURNING ""IdCompany"";";
-//                     cmd.Parameters.Clear();
-//                     cmd.Parameters.AddWithValue("Name", stock.Name);
-//                     cmd.Parameters.AddWithValue("Cik", stock.Cik != null ? stock.Cik : DBNull.Value);
-//                     cmd.Parameters.AddWithValue("Figi", stock.CompositeFigi != null ? stock.CompositeFigi : DBNull.Value);
-//                     var idCompany = await cmd.ExecuteScalarAsync();
-//                     
-//                     Console.WriteLine(idCompany);
-//                     
-//                     cmd.CommandText = sql;
-//                     cmd.Parameters.Clear();
-//                     cmd.Parameters.AddWithValue("IdCompany", idCompany);
-//                     cmd.Parameters.AddWithValue("Ticker", stock.Ticker);
-//                     cmd.Parameters.AddWithValue("Market", Enum.Parse(typeof(Market), stock.Market, true));
-//                     cmd.Parameters.AddWithValue("Currency", stock.CurrencyName);
-//                     cmd.Parameters.AddWithValue("PrimaryExchange", stock.PrimaryExchange);
-//                     cmd.Parameters.AddWithValue("Type", stock.Type);
-//                     cmd.Parameters.AddWithValue("IsActive", stock.Active);
-//                     cmd.Parameters.AddWithValue("UpdatedAt", DateTime.Parse(stock.LastUpdatedUtc));
-//                     await cmd.ExecuteNonQueryAsync();
-//                 }
-//                 else
-//                 {
-//                     if (company.Name != stock.Name)
-//                     {
-//                         cmd.CommandText = @"UPDATE ""Companies"" SET ""Name"" = @Name WHERE ""IdCompany"" = @IdCompany";
-//                         cmd.Parameters.Clear();
-//                         cmd.Parameters.AddWithValue("Name", stock.Name);
-//                         cmd.Parameters.AddWithValue("IdCompany", company.IdCompany);
-//                         await cmd.ExecuteNonQueryAsync();
-//                     }
-//
-//                     cmd.CommandText = sql;
-//                     cmd.Parameters.Clear();
-//                     cmd.Parameters.AddWithValue("IdCompany", company.IdCompany);
-//                     cmd.Parameters.AddWithValue("Ticker", stock.Ticker);
-//                     cmd.Parameters.AddWithValue("Market", Enum.Parse(typeof(Market), stock.Market, true));
-//                     cmd.Parameters.AddWithValue("Currency", stock.CurrencyName);
-//                     cmd.Parameters.AddWithValue("PrimaryExchange", stock.PrimaryExchange);
-//                     cmd.Parameters.AddWithValue("Type", stock.Type);
-//                     cmd.Parameters.AddWithValue("IsActive", stock.Active);
-//                     cmd.Parameters.AddWithValue("UpdatedAt", DateTime.Parse(stock.LastUpdatedUtc));
-//                     await cmd.ExecuteNonQueryAsync();
-//                 }
-//             }
-//
-//             try
-//             {
-//                 await transaction.CommitAsync();
-//             }
-//             catch (System.Exception)
-//             {
-//                 await transaction.RollbackAsync();
-//                 throw;
-//             }
+            await using var conn = GetConnection();
+            await conn.OpenAsync();
+
+            var sql = @"INSERT INTO ""ChartOhlcItems""
+                        (""IdStock"", ""V"", ""Vw"", ""O"", ""C"", ""H"", ""L"", ""Timestamp"", ""N"") 
+                    SELECT ""IdStock"", @V, @Vw, @O, @C, @H, @L, @Timestamp, @N FROM ""Stocks""
+                    WHERE ""Ticker"" = @Ticker ORDER BY ""IdStock"" LIMIT 1
+                    ON CONFLICT DO NOTHING";
+
+            await using var transaction = await conn.BeginTransactionAsync();
+            await using var cmd = new NpgsqlCommand(sql, conn) {Transaction = transaction};
+
+            foreach (var chartItem in chart.Results)
+            {
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("Ticker", chart.Ticker.ToUpper());
+                cmd.Parameters.AddWithValue("V", chartItem.V);
+                cmd.Parameters.AddWithValue("Vw", chartItem.Vw);
+                cmd.Parameters.AddWithValue("O", chartItem.O);
+                cmd.Parameters.AddWithValue("C", chartItem.C);
+                cmd.Parameters.AddWithValue("H", chartItem.H);
+                cmd.Parameters.AddWithValue("L", chartItem.L);
+                cmd.Parameters.AddWithValue("N", chartItem.N);
+                cmd.Parameters.AddWithValue("Timestamp", DateTimeOffset.FromUnixTimeMilliseconds(chartItem.T));
+                await cmd.ExecuteNonQueryAsync();
+            }
+
+            try
+            {
+                await transaction.CommitAsync();
+            }
+            catch (System.Exception)
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
         }
 
-        public async Task<ChartItem[]> GetChartItemsByTicker(string ticker, DateTime? from, DateTime? to)
+        public async Task<ChartItem[]> GetChartItemsByTicker(string ticker, DateTime from, DateTime to)
         {
-            DateTime fromDate, toDate;
-
-            if (from.HasValue && to.HasValue)
-            {
-                fromDate = from.Value;
-                toDate = to.Value;
-            }
-            else
-            {
-                fromDate = DateTime.Today.AddDays(-7);
-                toDate = DateTime.Today;
-            }
-
             return await _context.ChartOhlcItems
                 .Include(i => i.Stock)
-                .Where(i => i.Stock.Ticker == ticker && i.Timestamp >= fromDate && i.Timestamp <= toDate)
+                .Where(i => i.Stock.Ticker == ticker && i.Timestamp >= from && i.Timestamp <= to)
                 .Select(i => ChartItem.CreateByChartOhlcItem(i))
                 .ToArrayAsync();
         }

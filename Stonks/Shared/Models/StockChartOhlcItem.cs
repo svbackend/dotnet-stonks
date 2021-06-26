@@ -8,7 +8,7 @@ namespace Stonks.Shared.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
+        public int Id { get; set; }
         
         [Required]
         [ForeignKey("IdStock")]
@@ -17,7 +17,7 @@ namespace Stonks.Shared.Models
         public int IdStock { get; set; }
         
         [Required]
-        public long V { get; set; }
+        public double V { get; set; }
 
         [Required]
         public double Vw { get; set; }

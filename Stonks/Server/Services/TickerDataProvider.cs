@@ -77,7 +77,7 @@ namespace Stonks.Server.Services
             return stock;
         }
         
-        public async Task<ChartItem[]> GetChartByTicker(string ticker, DateTime? from, DateTime? to)
+        public async Task<ChartItem[]> GetChartByTicker(string ticker, DateTime from, DateTime to)
         {
             var response = await _polygon.GetChartByTicker(ticker, from, to);
             ChartItem[] chartItems;
@@ -85,7 +85,7 @@ namespace Stonks.Server.Services
             if (response.Success)
             {
                 chartItems = response.Response.Results;
-                await _db.SyncChart(chartItems);
+                await _db.SyncChart(response.Response);
             }
             else
             {

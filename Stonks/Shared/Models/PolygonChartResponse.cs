@@ -23,7 +23,7 @@ namespace Stonks.Shared.Models
 
     public class ChartItem
     {
-        public long V { get; set; }
+        public double V { get; set; }
 
         public double Vw { get; set; }
 
@@ -49,7 +49,7 @@ namespace Stonks.Shared.Models
                 C = i.C,
                 H = i.H,
                 L = i.L,
-                T = ((DateTimeOffset) i.Timestamp).ToUnixTimeSeconds(),
+                T = ((DateTimeOffset) i.Timestamp).ToUnixTimeMilliseconds(),
                 N = i.N
             };
         }
