@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Movie" />
+    <Folder Include="obj" />
     <Folder Include="Repository" />
   </ItemGroup>
 
